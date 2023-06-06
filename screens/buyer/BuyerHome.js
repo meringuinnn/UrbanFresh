@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   vegeBG: {
     // width: 400,
     height: 400,
-    marginTop: 30,
+    marginTop: 10,
   },
   headline: {
     color: colors.headerText,

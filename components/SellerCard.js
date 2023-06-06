@@ -34,7 +34,7 @@ const SellerCard = ({image,name,block,barangay,province,city,onPress}) => {
           <View style={styles.sellerInfo}>
             <Text style={styles.sellerName}>{name}</Text>
             <View style={styles.sellerLoc}>
-              <Icon2 name="location" size={10} color="black" style={{marginRight : 5}} />
+              <Icon2 name="location" size={10} color="#21C622" style={{marginRight : 5}} />
               <Text style={styles.locationText}>
                       {block} {barangay} {province} {city}
               </Text>  
