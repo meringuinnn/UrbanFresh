@@ -186,6 +186,7 @@ const styles = StyleSheet.create({
     },
     productListContainer:{ 
         backgroundColor: "#f2f3f4",
+        marginVertical: 5,
     },
     nameBox:{
         backgroundColor: 'white',

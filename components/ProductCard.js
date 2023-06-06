@@ -92,6 +92,7 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
                 width : 90,
                 borderRadius: 10
             }}
+            
         />
         <View style={styles.info}>
                 <Text style={styles.name}>{name.charAt(0).toUpperCase() + name.slice(1)}</Text>
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         marginHorizontal: 20,
-        marginVertical: 10,
+        marginVertical: 5,
         borderRadius: 10,
         padding: 20,
         flexDirection: "row",
