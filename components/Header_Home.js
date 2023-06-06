@@ -115,9 +115,9 @@ const styles = StyleSheet.create({
   },
   appName: {
     color: colors.primary,
-    fontWeight: 'bold',
+    fontWeight: 900,
     fontSize: 26,
-    textTransform : 'uppercase',
+    //textTransform : 'uppercase',
   },
   rightPart: {
     display: 'flex',

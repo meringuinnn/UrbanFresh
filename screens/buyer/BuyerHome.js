@@ -193,6 +193,6 @@ const styles = StyleSheet.create({
     color: 'white',
     marginHorizontal: 5,
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 14,
   },
 });

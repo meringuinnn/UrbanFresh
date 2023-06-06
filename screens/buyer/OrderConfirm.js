@@ -299,13 +299,7 @@ const OrderConfirm = ({ navigation }) => {
             >
               <Text style={styles.TPtitle}>Total Price: ₱{totalPrice}</Text>
             </View>
-            <View
-              style={{
-                borderWidth: 2,
-                borderStyle: "solid",
-                borderColor: colors.primary,
-              }}
-            ></View>
+
             <View
               style={{
                 alignItems: "center",
@@ -320,12 +314,13 @@ const OrderConfirm = ({ navigation }) => {
                   width: "100%",
                   textAlign: "left",
                   color: colors.primary,
-                  fontSize: 20,
+                  fontSize: 16,
+                  fontWeight: 900,
                 }}
               >
-                Shipping Address:{" "}
+                Shipping Address{" "}
               </Text>
-              <View style={{ flexDirection: "row" }}>
+              <View style={{ flexDirection: "row", padding: 15, margin: 10,}}>
                 <Text>
                   {user.block || ""} {user.barangay || ""} {user.city || ""}{" "}
                   {user.province || ""} {user.zipcode || ""}
@@ -334,7 +329,7 @@ const OrderConfirm = ({ navigation }) => {
                   style={{
                     width: 50,
                     backgroundColor: colors.primary,
-                    borderRadius: 100,
+                    borderRadius: 10,
                     shadowColor: "#000",
                     shadowOffset: {
                       width: 0,
@@ -353,8 +348,8 @@ const OrderConfirm = ({ navigation }) => {
                       textAlign: "center",
                       textAlignVertical: "center",
                       height: 40,
-
                       color: "white",
+                      fontWeight: 700,
                     }}
                   >
                     Edit{" "}
@@ -376,10 +371,11 @@ const OrderConfirm = ({ navigation }) => {
                   width: "100%",
                   textAlign: "left",
                   color: colors.primary,
-                  fontSize: 20,
+                  fontSize: 16,
+                  fontWeight:900,
                 }}
               >
-                Payment Type:
+                Payment Type
               </Text>
               <TouchableOpacity
                 onPress={() => setPay(0)}
@@ -441,7 +437,7 @@ const styles = StyleSheet.create({
   TPtitle: {
     textAlign: "left",
     flex: 1,
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     color: colors.primary,
     lineHeight: 25,
