@@ -11,7 +11,7 @@ const RegisterPanel = ({navigation}) => {
 
   return (
     <><StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
-    <SafeAreaView>
+    <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
       <Text style={styles.heading}>Register new account as</Text>
       <View style={styles.container}>
         {/* need some fixing css ugly */}

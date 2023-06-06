@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     // fontSize: 11,
     marginTop: 10,
     textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
     // marginRight: 50,
   }
 
