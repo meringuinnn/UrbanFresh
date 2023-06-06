@@ -220,7 +220,7 @@ const OrderConfirm = ({ navigation }) => {
 
               {/*DISPLAY DELIVERY ADDRESS*/}
               <Input
-                label="Street Name Building, House no:"
+                label="Street Name/Building/House no:"
                 onChangeText={(text) => setUserProfile("block", text)}
                 text={user.block || ""}
               />
