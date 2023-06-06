@@ -125,7 +125,7 @@ const BuyerHome = ({ navigation }) => {
               <View style={styles.textContainer}>
                 <Text style={styles.headline}>Make a fresh food delivery</Text>
                 <Text style={styles.description}>
-                  Conveniently deliver farm-fresh produce straight to your door. Enjoy wholesome fruits and vegetables at your fingertips.
+                  Conveniently deliver farm-fresh produce straight to your door with just one tap. Enjoy high-quality fruits and vegetables at your fingertips.
                 </Text>
                 <TouchableOpacity
                       onPress={() => navigation.navigate("SellerList")}

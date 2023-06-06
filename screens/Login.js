@@ -154,7 +154,7 @@ export default function Login({navigation}) {
         <View style={styles.loginBox}>
           <View style={styles.header}>
             <Text style={styles.heading}>Log in to UrbanFresh</Text>
-            <Text style={styles.smallText}>Ayala Boulevard, Ermita, Manila, Philippines.</Text>
+            <Text style={styles.smallText}>Unlock the goodness of nature with our hassle-free online fruit delivery service.</Text>
           </View>
 
 
