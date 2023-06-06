@@ -297,7 +297,7 @@ const OrderConfirm = ({ navigation }) => {
                 width: "100%",
               }}
             >
-              <Text style={styles.TPtitle}>Total Price: {totalPrice}</Text>
+              <Text style={styles.TPtitle}>Total Price: ₱{totalPrice}</Text>
             </View>
             <View
               style={{

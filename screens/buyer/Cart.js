@@ -50,7 +50,7 @@ const Cart = ({ navigation }) => {
         }}
       >
         <Text style={styles.title}>
-          Total Price with Shipping: {totalPrice}
+          Total Price with Shipping: ₱{totalPrice}
         </Text>
       </View>
       <View style={styles.cartBox}>

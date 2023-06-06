@@ -44,13 +44,14 @@ const FavProduct = ({isDeleting,desc,name,pic,price,getFaves,storeid}) =>{
             resizeMode='cover'
             style={{
                 height : 70,
-                width : 70
+                width : 70,
+                borderRadius: 10,
             }}
         />
         <View style={styles.info}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.desc}>{desc}</Text>
-                <Text style={styles.price}>Php {price}</Text>
+                <Text style={styles.price}>₱{price}</Text>
         </View>
         <View style={styles.heart}>
             {

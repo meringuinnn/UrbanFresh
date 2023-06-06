@@ -188,7 +188,7 @@ const CartProduct = ({isDeleting,count,prod_id,name,desc,price,unit,pic,stock,se
         <View style={styles.info}>
                 <Text style={styles.name}>{name.charAt(0).toUpperCase() + name.slice(1)}</Text>
                 <Text style={styles.desc}>{desc}</Text>
-                <Text style={styles.price}>PHP {price} per   
+                <Text style={styles.price}>₱{price} per   
                 {unit == 1? ' Kilo' : unit == 2? ' 100 grams':  unit == 3? ' pack' : unit == 4? ' 10kilos': ' Kaing (30 kg)'}
                 
                 </Text>
