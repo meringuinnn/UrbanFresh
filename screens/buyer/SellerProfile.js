@@ -122,17 +122,10 @@ if (docSnap.exists()) {
                     ))
 
                 }
-
-                {/* <Icon name="star" size={20} color="#FAFF00" />
-                <Icon name="star" size={20} color="#FAFF00" />
-                <Icon name="star" size={20} color="#FAFF00" />
-                <Icon name="star" size={20} color="#FAFF00" />
-                <Icon name="star" size={20} color="#FAFF00" /> */}
-
             </View>
         </View>
         <View style={styles.location}>
-            <Icon2 name="location" size={20} color="black" style={{marginRight : 10}} />
+            <Icon2 name="location" size={20} color="#21C622" style={{marginRight : 10}} />
             <Text style={styles.locationText}>
                     { `${store.block} ${store.barangay} ${store.city} ${store.province} ${store.zipcode}`}
             </Text>
@@ -177,8 +170,7 @@ const styles = StyleSheet.create({
         // gap : 10
     },
     stars :{
-        paddingHorizontal : 25,
-        paddingVertical : 10,
+        // padding: 15,
         flexDirection :'row',
         alignItems : 'center',
         justifyContent : 'space-between'
@@ -190,7 +182,7 @@ const styles = StyleSheet.create({
         textAlign : 'center',
         paddingHorizontal : 25,
         marginTop : 20,
-        marginBottom: 20,
+        marginBottom: 10,
     },
     productListContainer:{ 
         backgroundColor: "#f2f3f4",
@@ -199,6 +191,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderBottomRightRadius: 20,
         borderBottomLeftRadius: 20,
+        paddingTop: 10,
+        paddingHorizontal: 20,
     },
     name : {
         fontSize :24,
@@ -209,13 +203,14 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         alignItems : 'center',
         justifyContent : 'center',
-        gap : 5
+        // gap : 5
     },
     location : {
         flexDirection :'row',
         alignItems : 'center',
-        justifyContent : 'flex-start',
-        paddingHorizontal : 25,
+        justifyContent : 'space-between',
+        // paddingHorizontal : 25,
+        marginTop: 10,
     },
     locationText : {
         flex : 1,
