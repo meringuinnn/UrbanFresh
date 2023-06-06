@@ -110,8 +110,8 @@ const OrderCard =({address,date,orders,pay,status,storename,orderid,o,navigation
                     </View>
             </View>
 
-            <View style={styles.info}>
-                <Text style={styles.name}>PHP {getTotal()}</Text>
+            <View style={styles.infoRight}>
+                <Text style={styles.name}>₱{getTotal()}</Text>
                 <Text style={styles.date}>{getTotalItems()} Items</Text>
                   
             </View>
@@ -132,9 +132,7 @@ const styles = StyleSheet.create({
         height :70,
         width : '100%',
         flexDirection : 'row',
-       
         alignItems : 'center'
-        
     },
     title : {
       textAlign : 'center',
@@ -143,7 +141,6 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color : colors.primary,
         lineHeight : 25
-
     },
     infoText : {
         textAlign : 'center',
@@ -169,8 +166,11 @@ const styles = StyleSheet.create({
         marginBottom : 10
     },
     info : {
-        justifyContent : 'flex-start',
-        alignItems : 'flex-start'
+        // justifyContent : 'space-between',
+        alignItems : 'flex-start',
+    },
+    infoRight: {
+        alignItems : 'flex-end',
     },
     name : {
         fontSize : 14,
@@ -202,5 +202,4 @@ const styles = StyleSheet.create({
         colors: colors.headerText,
         fontWeight : 'bold'
     }
-   
 })
