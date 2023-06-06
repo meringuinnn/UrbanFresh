@@ -92,7 +92,7 @@ const OrderConfirm = ({ navigation }) => {
         long: location.long,
         lat: location.lat,
       });
-      toast.show("Profile Updated Successfully!!", {
+      toast.show("Profile Updated Successfully!", {
         type: "success",
         placement: "bottom",
         duration: 2000,
@@ -135,9 +135,9 @@ const OrderConfirm = ({ navigation }) => {
   }
 
   const ConfirmOrder = () => {
-    console.log("Order confirmed");
+    console.log("Order confirmed!");
     addOrders(cart, storeid, pay);
-    toast.show("Order confirmed and has been sent to seller", {
+    toast.show("Your order has been confirmed and was sent to seller.", {
       type: "success",
       placement: "bottom",
       duration: 2000,
@@ -147,6 +147,7 @@ const OrderConfirm = ({ navigation }) => {
     navigation.navigate("BuyerHome");
   };
 
+  //LEAFLET MAP
   console.log(cart.length > 0);
   return (
     <SafeAreaView style={styles.container}>
@@ -183,11 +184,13 @@ const OrderConfirm = ({ navigation }) => {
                 text="Get My Location"
                 color={colors.primary}
               /> */}
+
+              {/*SEARCH USER'S LOCATION USING ADDRESS DETAILS*/}
               <View style={{ flexDirection: "row" }}>
                 <Button
                   width={"50%"}
                   onPress={() => {
-                    alert("address search!");
+                    alert("Address search!");
                     handleSearch(
                       user.block +
                         " " +
@@ -200,8 +203,10 @@ const OrderConfirm = ({ navigation }) => {
                   }}
                   textColor="white"
                   text="Search Address"
-                  color={colors.primary}
+                  color={colors.primary}  
                 />
+
+                {/*GET USER'S LOCATION BASE ON PHONE GPS*/}
                 <Button
                   width={"50%"}
                   onPress={() => {
@@ -209,35 +214,38 @@ const OrderConfirm = ({ navigation }) => {
                   }}
                   textColor="white"
                   text="My Location"
-                  color={colors.dragon}
+                  color={colors.primary}
                 />
               </View>
 
+              {/*DISPLAY DELIVERY ADDRESS*/}
               <Input
-                label="Street Name Building, House no"
+                label="Street Name Building, House no:"
                 onChangeText={(text) => setUserProfile("block", text)}
                 text={user.block || ""}
               />
               <Input
-                label="Barangay"
+                label="Barangay:"
                 onChangeText={(text) => setUserProfile("barangay", text)}
                 text={user.barangay || ""}
               />
               <Input
-                label="City/Town"
+                label="City/Town:"
                 onChangeText={(text) => setUserProfile("city", text)}
                 text={user.city || ""}
               />
               <Input
-                label="Province"
+                label="Province:"
                 onChangeText={(text) => setUserProfile("province", text)}
                 text={user.province || ""}
               />
               <Input
-                label="Zip Code"
+                label="Zip Code:"
                 onChangeText={(text) => setUserProfile("zipcode", text)}
                 text={user.zipcode || ""}
               />
+
+              {/*BACK TO CHECKOUT PAGE*/}
               <View style={{ flexDirection: "row" }}>
                 <Button
                   width={"40%"}
@@ -248,12 +256,14 @@ const OrderConfirm = ({ navigation }) => {
                   text="Go Back"
                   color={colors.primary}
                 />
+
+                {/*SAVE NEW/UPDATE DELIVERY ADDRESS*/}
                 <Button
                   width={"60%"}
                   onPress={handleUpdate}
                   textColor="white"
                   text="Save Billing Address"
-                  color={colors.dragon}
+                  color={colors.primary}
                 />
               </View>
             </ScrollView>
