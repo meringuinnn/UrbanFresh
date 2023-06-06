@@ -51,7 +51,8 @@ export default function SalesStack() {
         headerStyle :{backgroundColor : colors.primary},
         headerTitleStyle : {color : 'white',fontSize : 24,fontWeight : 'bold'},
         headerTitleAlign : 'left',
-        headerTintColor: 'white',}}/>
+        headerTintColor: 'white',
+        headerShown: false }}/>
   {/* <Stack.Screen name="AddProduct" component={AddProduct} options={{
         title : 'Profile',
         headerStyle :{backgroundColor : colors.primary},

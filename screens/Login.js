@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
         fontStyle: 'normal',
         fontSize: 12,
         lineHeight: 12,
-        textTransform: 'uppercase',
+        // textTransform: 'uppercase',
         color : '#21C622',
         marginVertical : 8
       },

@@ -133,11 +133,11 @@ const handleCancel = async (orderid)=>{
               </View>
               <View style={styles.linkBox}>
                   <Text style={{ fontSize: 16 }}>Shipping Fee</Text>
-                  <Text style={{ fontSize: 16 }}>PHP {getTotalShipping()}</Text>
+                  <Text style={{ fontSize: 16 }}>₱{getTotalShipping()}</Text>
               </View>
               <View style={styles.linkBox}>
                   <Text style={{ fontSize: 16 }}>Order Total</Text>
-                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>PHP {getTotalPrice()}</Text>
+                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>₱{getTotalPrice()}</Text>
               </View>  
             </View>
               
@@ -167,7 +167,7 @@ const ProductCard =({pic,name,count,price,shipping})=>{
 
             <View style={{flex : 1}}>
                 <Text style={{fontWeight : 'bold',fontSize : 14}}>{name}</Text>
-                <Text>PHP {price}</Text>
+                <Text>₱{price}</Text>
             </View>
             <Text>x {count}</Text>
         </View>
