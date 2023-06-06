@@ -45,8 +45,8 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
         })
 
         addToCart(prod_id,user.userid,0,sname,pic,unit,stock,price,name,desc,shipping)
-        console.log("added to cart")
-        toast.show('Product added to cart.',{
+        console.log("Added to cart")
+        toast.show('Product added to cart',{
             type: "success",
             placement: "bottom",
             duration: 2000,
@@ -70,8 +70,8 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
 
    const handleAddtoFav = ()=>{
     addToFav(prod_id,user.userid,sname,pic,unit,price,name,desc)
-        console.log("added to Favorites")
-        toast.show('Product added to favorites.',{
+        console.log("Added to favorites")
+        toast.show('Product added to favorites',{
             type: "success",
             placement: "bottom",
             duration: 2000,
@@ -97,7 +97,7 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
         <View style={styles.info}>
                 <Text style={styles.name}>{name.charAt(0).toUpperCase() + name.slice(1)}</Text>
                 <Text style={styles.desc}>{desc}</Text>
-                <Text style={styles.price}>PHP {price} per   
+                <Text style={styles.price}>₱{price} per   
                 {unit == 1? ' Kilo' : unit == 2? ' 100 grams':  unit == 3? ' pack' : unit == 4? ' 10kilos': ' Kaing (30 kg)'}
                 
                 </Text>

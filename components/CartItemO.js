@@ -173,10 +173,10 @@ const CartProduct = ({isDeleting,count,prod_id,name,desc,price,unit,pic,stock,se
         <View style={styles.info}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.desc}>{desc}</Text>
-                <Text style={styles.price}>Price : {price}</Text>
+                <Text style={styles.price}>Price : ₱{price}</Text>
                 <Text style={styles.price}>Quantity : {count}</Text>
-                <Text style={styles.price}>Shipping Fee : PHP {shipping}</Text>
-                <Text style={styles.price}>Subtotal : PHP {(price * count)+ shipping}</Text>
+                <Text style={styles.price}>Shipping Fee : ₱{shipping}</Text>
+                <Text style={styles.price}>Subtotal : ₱{(price * count)+ shipping}</Text>
                
         </View>
         
