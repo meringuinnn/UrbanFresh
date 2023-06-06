@@ -69,7 +69,7 @@ const getStatus=(status)=>{
       <View style={styles.cartBox}>
 
         <Text style={styles.title}>Delivery Status</Text>
-        {order.length == 0 ? <Text></Text> : <Text style={styles.orderText}>Your order is {getStatus(order[0].status)}</Text>}
+        {order.length == 0 ? <Text></Text> : <Text style={styles.orderText}>Your order is currently {getStatus(order[0].status)}!</Text>}
         {order.length == 0 ? <Text>No Current Orders</Text>
 
           : <View style={styles.infoBox}>
