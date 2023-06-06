@@ -73,8 +73,8 @@ const getStatus=(status)=>{
         {order.length == 0 ? <Text>No Current Orders</Text>
 
           : <View style={styles.infoBox}>
-            <Text style={styles.text}><Text style={styles.head}>{order.length > 0 && order[0].storename}</Text> has <Text style={[styles.status, { color: getColor(order[0].status) }]}>{order.length > 0 && getStatus(order[0].status)}</Text> your order</Text>
-            <Text style={styles.text}>Delivery Rider: Smith, John</Text>
+            <Text style={styles.text}><Text style={styles.head}>{order.length > 0 && order[0].storename}</Text> has <Text style={[styles.status, { color: getColor(order[0].status) }]}>{order.length > 0 && getStatus(order[0].status)}</Text> your order!</Text>
+            <Text style={styles.text}>Delivery Rider: Dela Cruz, Juan</Text>
             <Text style={styles.text}>Contact Number: 09162568998</Text>
 
           </View>}
@@ -124,6 +124,8 @@ const styles = StyleSheet.create({
     },
     buttontxt:{
       fontWeight: 'bold',
+      color: "#FFFFFF",
+      fontSize: 14,
     },
     title : {
         textAlign : 'center',
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
         fontSize : 24,
         fontWeight:'bold',
         color : colors.headerText,
-        lineHeight : 20
+        lineHeight : 50
     },
     infoBox : {
       width : 300,
@@ -150,7 +152,8 @@ const styles = StyleSheet.create({
       backgroundColor : 'rgba(33, 198, 34, 0.3)',
       borderRadius : 12,
       alignItems : 'center',
-      justifyContent : 'center'
+      justifyContent : 'center', 
+      padding: 20,
     },
     text :{
       textAlign : 'center',
@@ -161,10 +164,11 @@ const styles = StyleSheet.create({
     head :{
       color : colors.headerText,
       fontWeight : 'bold',
-      fontSize : 24
+      fontSize : 16,
+      lineHeight: 30,
     },
     status :{
-      
+      fontSize : 16,
       fontWeight : 'bold'
     }
 })
