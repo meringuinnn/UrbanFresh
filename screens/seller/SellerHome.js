@@ -158,7 +158,7 @@ const SellerHome = ({ navigation }) => {
       </View>
     )} */}
       <ScrollView
-        style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           alignItems: "center",
           justifyContent: "center",
@@ -167,14 +167,15 @@ const SellerHome = ({ navigation }) => {
         {products.length == 0 && (
           <Text style={styles.headerText}>No Products</Text>
         )}
-
-        {products.map((prod, i) => (
-          <ProductCard
-            navigation={navigation}
-            getProducts={getProducts}
-            key={i}
-            {...prod} />
-        ))}
+        <View style={styles.contentContainer}>
+          {products.map((prod, i) => (
+            <ProductCard
+              navigation={navigation}
+              getProducts={getProducts}
+              key={i}
+              {...prod} />
+          ))}  
+        </View>
       </ScrollView>
       <View style={styles.btnBox}>
         <Button
@@ -222,7 +223,7 @@ const ProductCard = ({
   };
 
   return (
-    <TouchableOpacity
+    <View
       style={[
         styles.card,
         {
@@ -289,7 +290,7 @@ const ProductCard = ({
           </>
         )}
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
@@ -310,9 +311,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     // marginTop: 20,
   },
+  contentContainer:{
+    paddingBottom: 90,
+  },
   headerText: {
     fontSize: 14,
-
     color: colors.headerText,
   },
   line: {
@@ -348,11 +351,15 @@ const styles = StyleSheet.create({
   //   flex: 1,
   // },
   btnBox: {
-    backgroundColor: 'transparent',
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 10,
+    position: 'absolute', 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    marginBottom: 20,
+    // top: 0, 
+    left: 0, 
+    right: 0, 
+    bottom: 0,
   },
   card: {
     height: 120,

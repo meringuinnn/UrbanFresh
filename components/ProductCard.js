@@ -83,7 +83,7 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
        
     
   return (
-    <TouchableOpacity  onPress={onPress} style={styles.card}>
+    <View  onPress={onPress} style={styles.card}>
         <Image 
             source={{uri:pic[0]} || fallback}
             resizeMode='cover'
@@ -105,9 +105,9 @@ const ProductCard = ({onPress,name,desc,price,stock,unit,pic,prod_id,sname,shipp
         </View>
         <View style={styles.heart}>
             <TouchableOpacity onPress={handleAddtoFav}><Icon name="heart-o" size={25} /></TouchableOpacity>
-            {inCart ? <Text>Already in Cart</Text>: <TouchableOpacity disabled={stock==0} onPress={handleAddToCart} style={styles.add}><Text style={{fontSize : 14,lineHeight : 14,color : 'white'}}>Add</Text></TouchableOpacity>}
+            {inCart ? <Text>Already in Cart</Text>: <TouchableOpacity disabled={stock==0} onPress={handleAddToCart} style={styles.add}><Text style={{fontSize : 14, color : 'white'}}>Add</Text></TouchableOpacity>}
         </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 
