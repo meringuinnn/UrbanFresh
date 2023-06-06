@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: 'white',
       marginHorizontal: 20,
-      marginVertical: 10,
+      marginVertical: 5,
       borderRadius: 10,
       padding: 10,
       // flexWrap: 'wrap',

@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
     // marginTop: 20,
     backgroundColor: 'white',
     paddingBottom: 20,
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
   },
   searchBar: {
     // flex: 1,

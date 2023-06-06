@@ -133,7 +133,7 @@ const SellerList = ({ navigation }) => {
           contentContainerStyle={{
             // alignItems: "center",
             // gap: 20,
-            paddingTop: 10,
+            paddingVertical: 5,
             backgroundColor: "#f2f3f4",
           }}
         >
@@ -166,12 +166,13 @@ export default SellerList;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#f2f3f4",
   },
   title: {
     // width: 300,
     // margin: 20,
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   textHeader: {
     color: '#3E3627',
@@ -188,8 +189,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    borderBottomRightRadius: 20,
-    borderBottomLeftRadius: 20,
   },
   tab: {
     height: 35,
