@@ -153,7 +153,7 @@ export default function Login({navigation}) {
 
         <View style={styles.loginBox}>
           <View style={styles.header}>
-            <Text style={styles.heading}>Log in to UrbanFresh</Text>
+            <Text style={styles.heading}>Log in to your account and skip the grocery store queues.</Text>
             <Text style={styles.smallText}>Unlock the goodness of nature with our hassle-free online fruit delivery service.</Text>
           </View>
 
@@ -249,16 +249,18 @@ const styles = StyleSheet.create({
         // width : 250,
         fontWeight: 'bold',
         fontSize: 29,
-        lineHeight: 30,
-        color : '#3E3627'
+        lineHeight: 29,
+        color : '#3E3627',
+        fontWeight: 900,
       },
       smallText :{
-        fontStyle: 'normal',
-        fontSize: 12,
-        lineHeight: 12,
-        textTransform: 'uppercase',
+        fontStyle: 'italic',
+        fontSize: 16,
+        lineHeight: 18,
+        //textTransform: 'uppercase',
         color : '#21C622',
-        marginVertical : 8
+        marginVertical : 5,
+        fontWeight: 600,
       },
      newUser : {
         flexDirection : 'row',
