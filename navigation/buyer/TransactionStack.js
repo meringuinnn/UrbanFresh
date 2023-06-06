@@ -19,7 +19,8 @@ const TransactionStack = () => {
         headerStyle :{backgroundColor : colors.primary},
         headerTitleStyle : {color : 'white',fontSize : 24,fontWeight : 'bold'},
         headerTitleAlign : 'left',
-        headerTintColor: 'white',}}/>
+        headerTintColor: 'white',
+        headerShown: false }}/>
    
     
 
