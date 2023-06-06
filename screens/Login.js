@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
         display : 'flex',
         alignItems:'center',
         justifyContent : 'center',
-        marginTop : 150,
+        marginTop : 120,
         width : 300
       },
       heading : {

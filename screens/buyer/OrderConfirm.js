@@ -299,14 +299,12 @@ const OrderConfirm = ({ navigation }) => {
             >
               <Text style={styles.TPtitle}>Total Price: ₱{totalPrice}</Text>
             </View>
-
             <View
               style={{
-                alignItems: "center",
                 justifyContent: "center",
                 width: "100%",
                 paddingLeft: 20,
-                paddingRight: 20,
+                // paddingRight: 45,
               }}
             >
               <Text
@@ -320,16 +318,20 @@ const OrderConfirm = ({ navigation }) => {
               >
                 Shipping Address{" "}
               </Text>
-              <View style={{ flexDirection: "row", padding: 15, margin: 10,}}>
-                <Text>
+              <View style={{ flexDirection: "row", width: "80%"}}>
+                <Text numberOfLines={2} ellipsizeMode="tail">
                   {user.block || ""} {user.barangay || ""} {user.city || ""}{" "}
                   {user.province || ""} {user.zipcode || ""}
                 </Text>
+
                 <TouchableOpacity
                   style={{
-                    width: 50,
+                    width: "20%",
+                    marginLeft: 8,
+                    alignItems: 'center', 
+                    justifyContent: 'center',
                     backgroundColor: colors.primary,
-                    borderRadius: 10,
+                    borderRadius: 25,
                     shadowColor: "#000",
                     shadowOffset: {
                       width: 0,
@@ -345,9 +347,9 @@ const OrderConfirm = ({ navigation }) => {
                 >
                   <Text
                     style={{
-                      textAlign: "center",
-                      textAlignVertical: "center",
-                      height: 40,
+                      textAlign: 'center', 
+                      textAlignVertical: 'center',
+                      fontSize: 15,
                       color: "white",
                       fontWeight: 700,
                     }}

@@ -113,7 +113,7 @@ const CartProduct = ({isDeleting,count,prod_id,name,desc,price,unit,pic,stock,se
         const newCart = cartItems.map((item)=>{
             if(item.prod_id == prod_id){
                 return {...item,
-                    count : item.count > 0 ? item.count - 1 : 0 }
+                    count : item.count > 1 ? item.count - 1 : 1 }
                     // added a condition so that item count won't go below 0
                     // default code is {...item,count : item.count - 1  }
             }else{
