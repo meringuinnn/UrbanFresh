@@ -154,7 +154,7 @@ export default function Login({navigation}) {
         <View style={styles.loginBox}>
           <View style={styles.header}>
             <Text style={styles.heading}>Log in to your account and skip the grocery store queues.</Text>
-            <Text style={styles.smallText}>Unlock the goodness of nature with our hassle-free online fruit delivery service.</Text>
+            <Text style={styles.smallText}>Unlock the goodness of nature with our hassle-free online fruit and vegetable delivery service.</Text>
           </View>
 
 
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
         display : 'flex',
         alignItems:'center',
         justifyContent : 'center',
-        marginTop : 120,
+        marginTop : 80,
         width : 300
       },
       heading : {
