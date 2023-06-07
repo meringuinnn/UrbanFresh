@@ -278,6 +278,32 @@ const OrderConfirm = ({ navigation }) => {
                     text="Go Back"
                     color={colors.primary}
                   />
+              {/*DISPLAY DELIVERY ADDRESS*/}
+              <Input
+                label="Street Name/Building/House no:"
+                onChangeText={(text) => setUserProfile("block", text)}
+                text={user.block || ""}
+              />
+              <Input
+                label="Barangay:"
+                onChangeText={(text) => setUserProfile("barangay", text)}
+                text={user.barangay || ""}
+              />
+              <Input
+                label="City/Town:"
+                onChangeText={(text) => setUserProfile("city", text)}
+                text={user.city || ""}
+              />
+              <Input
+                label="Province:"
+                onChangeText={(text) => setUserProfile("province", text)}
+                text={user.province || ""}
+              />
+              <Input
+                label="Zip Code:"
+                onChangeText={(text) => setUserProfile("zipcode", text)}
+                text={user.zipcode || ""}
+              />
 
                   {/*SAVE NEW/UPDATE DELIVERY ADDRESS*/}
                   <Button
@@ -417,13 +443,13 @@ const OrderConfirm = ({ navigation }) => {
                 onPress={() => setPay(0)}
                 style={[styles.payment, pay == 0 ? styles.selected : ""]}
               >
-                <Text style={styles.paymentText}>COD</Text>
+                <Text style={styles.paymentText}>Cash on Delivery</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => setPay(1)}
                 style={[styles.payment, pay == 1 ? styles.selected : ""]}
               >
-                <Text style={styles.paymentText}>GCASH</Text>
+                <Text style={styles.paymentText}>E-Wallet</Text>
               </TouchableOpacity>
             </View>
           </ScrollView>
@@ -509,7 +535,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: colors.headerText,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 15,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
@@ -525,7 +551,7 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
   },
   paymentText: {
-    fontSize: 24,
+    fontSize: 16,
     color: colors.headerText,
     fontWeight: "bold",
   },
