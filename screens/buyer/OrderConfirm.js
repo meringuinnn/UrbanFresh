@@ -393,13 +393,13 @@ const OrderConfirm = ({ navigation }) => {
                 onPress={() => setPay(0)}
                 style={[styles.payment, pay == 0 ? styles.selected : ""]}
               >
-                <Text style={styles.paymentText}>COD</Text>
+                <Text style={styles.paymentText}>Cash on Delivery</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => setPay(1)}
                 style={[styles.payment, pay == 1 ? styles.selected : ""]}
               >
-                <Text style={styles.paymentText}>GCASH</Text>
+                <Text style={styles.paymentText}>Gcash</Text>
               </TouchableOpacity>
             </View>
           </ScrollView>
