@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View,ImageBackground, TextInput,useWindowDimensions, TouchableOpacity } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, StatusBar, View,ImageBackground, TextInput,useWindowDimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import userplaceholder from '../../assets/images/user.png'
 import { colors } from '../../utils/constants'
@@ -78,32 +78,33 @@ const ProfileView = ({navigation}) => {
 
 
   return (
+    <><StatusBar backgroundColor={"#21C622"} barStyle={'light-content'} />
     <SafeAreaView style={styles.container}>
-    <View style={styles.profileContainer}>
-      <View style={styles.imgBox}>
-                <ImageBackground
-                    source={{uri:user.pic.toString()} || userplaceholder}
-                    resizeMode="cover"
-                    style={styles.img}
-                ></ImageBackground>
-                <TouchableOpacity onPress={pickImage} style={styles.icon}>
-                    <Icon  name="edit" size={30} color={colors.primary} />
-                </TouchableOpacity>
-               </View>
-      <Input label="Name" text={`${user.fname} ${user.lname}`} />
-      <Input label="Email" text={user.email}  isVerified/>
-      <Input label="Password" text={user.cpass} isPassword/>
-      <Input label="Mobile Number" text={user.mobile} />
-      <Input label="Address" text={`${user.block} ${user.barangay} ${user.city} ${user.province}`} multiline/>
+          <View style={styles.profileContainer}>
+              <View style={styles.imgBox}>
+                  <ImageBackground
+                      source={{ uri: user.pic.toString() } || userplaceholder}
+                      resizeMode="cover"
+                      style={styles.img}
+                  ></ImageBackground>
+                  <TouchableOpacity onPress={pickImage} style={styles.icon}>
+                      <Icon name="edit" size={30} color={colors.primary} />
+                  </TouchableOpacity>
+              </View>
+              <Input label="Name" text={`${user.fname} ${user.lname}`} />
+              <Input label="Email" text={user.email} isVerified />
+              <Input label="Password" text={user.cpass} isPassword />
+              <Input label="Mobile Number" text={user.mobile} />
+              <Input label="Address" text={`${user.block} ${user.barangay} ${user.city} ${user.province}`} multiline />
 
-      <View style={styles.footer}>
-            <TouchableOpacity onPress={()=>navigation.navigate('UpdateProfile')} style={[styles.button,{width :150,backgroundColor : '#21C622'}]}>
-                <Text style={styles.btntxt}>Update Profile</Text>
-            </TouchableOpacity>
-            {/* <Button onPress={()=>navigation.navigate('UpdateProfile')} color={colors.primary} text="Update Profile" textColor="white"/> */}
-      </View>  
-    </View>
-    </SafeAreaView>
+              <View style={styles.footer}>
+                  <TouchableOpacity onPress={() => navigation.navigate('UpdateProfile')} style={[styles.button, { width: 150, backgroundColor: '#21C622' }]}>
+                      <Text style={styles.btntxt}>Update Profile</Text>
+                  </TouchableOpacity>
+                  {/* <Button onPress={()=>navigation.navigate('UpdateProfile')} color={colors.primary} text="Update Profile" textColor="white"/> */}
+              </View>
+          </View>
+      </SafeAreaView></>
   )
 }
 

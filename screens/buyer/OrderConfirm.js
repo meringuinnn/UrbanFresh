@@ -166,15 +166,16 @@ const OrderConfirm = ({ navigation }) => {
               style={{ flex: 1 }}
             />
           </View>
-          <View
+          {/* <View
             style={{
+              flex: 1,
               alignItems: "center",
               alignContent: "center",
-              height: "80%",
-              paddingBottom: 110,
+              // height: "80%",
+              // paddingBottom: 110,
             }}
-          >
-            <ScrollView>
+          > */}
+            <ScrollView showsVerticalScrollIndicator={false}>
               {/* <Button
                 width={300}
                 onPress={() => {
@@ -184,90 +185,112 @@ const OrderConfirm = ({ navigation }) => {
                 text="Get My Location"
                 color={colors.primary}
               /> */}
+            <View style={styles.addressContainer}>
+                {/*SEARCH USER'S LOCATION USING ADDRESS DETAILS*/}
+                <View style={{ flex: 1, flexDirection: "row", gap: 5, alignItems: 'center', justifyContent: 'center', paddingBottom: 10}}>
+                  <Button
+                    width={"50%"}
+                    onPress={() => {
+                      toast.show("Searching address...", {
+                        // type: "danger",
+                        placement: "bottom",
+                        duration: 2000,
+                        offset: 30,
+                        animationType: "slide-in",
+                      });
+                      handleSearch(
+                        user.block +
+                          " " +
+                          user.barangay +
+                          " " +
+                          user.city +
+                          " " +
+                          user.province
+                      );
+                    }}
+                    textColor="white"
+                    text="Search Address"
+                    color={colors.primary}  
+                  />
 
-              {/*SEARCH USER'S LOCATION USING ADDRESS DETAILS*/}
-              <View style={{ flexDirection: "row" }}>
-                <Button
-                  width={"50%"}
-                  onPress={() => {
-                    alert("Address search!");
-                    handleSearch(
-                      user.block +
-                        " " +
-                        user.barangay +
-                        " " +
-                        user.city +
-                        " " +
-                        user.province
-                    );
-                  }}
-                  textColor="white"
-                  text="Search Address"
-                  color={colors.primary}  
-                />
+                  {/*GET USER'S LOCATION BASE ON PHONE GPS*/}
+                  <Button
+                    width={"50%"}
+                    onPress={() => {
+                      toast.show("Searching address...", {
+                        // type: "danger",
+                        placement: "bottom",
+                        duration: 2000,
+                        offset: 30,
+                        animationType: "slide-in",
+                      });
+                      getLocation();
+                    }}
+                    textColor="white"
+                    text="My Location"
+                    color={colors.primary}
+                  />
+                </View>
 
-                {/*GET USER'S LOCATION BASE ON PHONE GPS*/}
-                <Button
-                  width={"50%"}
-                  onPress={() => {
-                    getLocation();
-                  }}
-                  textColor="white"
-                  text="My Location"
-                  color={colors.primary}
-                />
-              </View>
+                {/*DISPLAY DELIVERY ADDRESS*/}
+                <View style={styles.addressTextContainer}>
+                  <Input
+                    label="Street Name/Building/House no."
+                    onChangeText={(text) => setUserProfile("block", text)}
+                    text={user.block || ""}
+                    style={styles.addressTitle}
+                  />
+                  <Input
+                    label="Barangay"
+                    onChangeText={(text) => setUserProfile("barangay", text)}
+                    text={user.barangay || ""}
+                    style={styles.addressTitle}
+                  />
+                  <Input
+                    label="City/Town"
+                    onChangeText={(text) => setUserProfile("city", text)}
+                    text={user.city || ""}
+                    style={styles.addressTitle}
+                  />
+                  <Input
+                    label="Province"
+                    onChangeText={(text) => setUserProfile("province", text)}
+                    text={user.province || ""}
+                    style={styles.addressTitle}
+                  />
+                  <Input
+                    label="Zip Code"
+                    onChangeText={(text) => setUserProfile("zipcode", text)}
+                    text={user.zipcode || ""}
+                    style={styles.addressTitle}
+                  />  
+                </View>
+                
 
-              {/*DISPLAY DELIVERY ADDRESS*/}
-              <Input
-                label="Street Name/Building/House no:"
-                onChangeText={(text) => setUserProfile("block", text)}
-                text={user.block || ""}
-              />
-              <Input
-                label="Barangay:"
-                onChangeText={(text) => setUserProfile("barangay", text)}
-                text={user.barangay || ""}
-              />
-              <Input
-                label="City/Town:"
-                onChangeText={(text) => setUserProfile("city", text)}
-                text={user.city || ""}
-              />
-              <Input
-                label="Province:"
-                onChangeText={(text) => setUserProfile("province", text)}
-                text={user.province || ""}
-              />
-              <Input
-                label="Zip Code:"
-                onChangeText={(text) => setUserProfile("zipcode", text)}
-                text={user.zipcode || ""}
-              />
-
-              {/*BACK TO CHECKOUT PAGE*/}
-              <View style={{ flexDirection: "row" }}>
-                <Button
-                  width={"40%"}
-                  onPress={() => {
-                    setIsSeeMap(!isSeeMap);
-                  }}
-                  textColor="white"
-                  text="Go Back"
-                  color={colors.primary}
-                />
-
-                {/*SAVE NEW/UPDATE DELIVERY ADDRESS*/}
-                <Button
-                  width={"60%"}
-                  onPress={handleUpdate}
-                  textColor="white"
-                  text="Save Billing Address"
-                  color={colors.primary}
-                />
-              </View>
+                {/*BACK TO CHECKOUT PAGE*/}
+                <View style={{ flex: 1, flexDirection: "row", gap: 5, alignItems: 'center', justifyContent: 'center', paddingTop: 10}}>
+                  <Button
+                    width={"40%"}
+                    onPress={() => {
+                      setIsSeeMap(!isSeeMap);
+                    }}
+                    textColor="white"
+                    text="Go Back"
+                    color={colors.primary}
+                  />
+                  {/*SAVE NEW/UPDATE DELIVERY ADDRESS*/}
+                  <Button
+                    width={"60%"}
+                    onPress={handleUpdate}
+                    textColor="white"
+                    text="Save Billing Address"
+                    color={colors.primary}
+                  />
+                </View>
+            </View>
+              
             </ScrollView>
-          </View>
+          {/* </View> */}
         </>
       ) : (
         <>
@@ -505,6 +528,20 @@ const styles = StyleSheet.create({
     color: colors.headerText,
     fontWeight: "bold",
   },
+  addressContainer: {
+    margin: 20,
+  },
+  txtbox: {
+    padding: 10,
+  },
+  label: {
+    fontWeight: 'bold',
+  },
+  input: {
+    flex: 1,
+    borderBottomWidth: 1,
+    marginVertical: 5,
+  }
 });
 const Input = ({
   label,
@@ -524,8 +561,7 @@ const Input = ({
   return (
     <View
       style={[
-        styles.input,
-        { width: width * 0.95, height: multiline ? 90 : 60 },
+        styles.input
       ]}
     >
       <View style={{ flex: 1 }}>
