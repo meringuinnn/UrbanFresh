@@ -399,7 +399,7 @@ const OrderConfirm = ({ navigation }) => {
                 onPress={() => setPay(1)}
                 style={[styles.payment, pay == 1 ? styles.selected : ""]}
               >
-                <Text style={styles.paymentText}>Gcash</Text>
+                <Text style={styles.paymentText}>E-Wallet</Text>
               </TouchableOpacity>
             </View>
           </ScrollView>
@@ -485,7 +485,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderColor: colors.headerText,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 15,
     height: 40,
     flexDirection: "row",
     alignItems: "center",
@@ -501,7 +501,7 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
   },
   paymentText: {
-    fontSize: 24,
+    fontSize: 16,
     color: colors.headerText,
     fontWeight: "bold",
   },
