@@ -166,7 +166,7 @@ const OrderConfirm = ({ navigation }) => {
               style={{ flex: 1 }}
             />
           </View>
-          <View
+          {/* <View
             style={{
               flex: 1,
               alignItems: "center",
@@ -174,7 +174,7 @@ const OrderConfirm = ({ navigation }) => {
               // height: "80%",
               // paddingBottom: 110,
             }}
-          >
+          > */}
             <ScrollView showsVerticalScrollIndicator={false}>
               {/* <Button
                 width={300}
@@ -235,7 +235,7 @@ const OrderConfirm = ({ navigation }) => {
                 {/*DISPLAY DELIVERY ADDRESS*/}
                 <View style={styles.addressTextContainer}>
                   <Input
-                    label="Street Name Building, House no."
+                    label="Street Name/Building/House no."
                     onChangeText={(text) => setUserProfile("block", text)}
                     text={user.block || ""}
                     style={styles.addressTitle}
@@ -278,33 +278,6 @@ const OrderConfirm = ({ navigation }) => {
                     text="Go Back"
                     color={colors.primary}
                   />
-              {/*DISPLAY DELIVERY ADDRESS*/}
-              <Input
-                label="Street Name/Building/House no:"
-                onChangeText={(text) => setUserProfile("block", text)}
-                text={user.block || ""}
-              />
-              <Input
-                label="Barangay:"
-                onChangeText={(text) => setUserProfile("barangay", text)}
-                text={user.barangay || ""}
-              />
-              <Input
-                label="City/Town:"
-                onChangeText={(text) => setUserProfile("city", text)}
-                text={user.city || ""}
-              />
-              <Input
-                label="Province:"
-                onChangeText={(text) => setUserProfile("province", text)}
-                text={user.province || ""}
-              />
-              <Input
-                label="Zip Code:"
-                onChangeText={(text) => setUserProfile("zipcode", text)}
-                text={user.zipcode || ""}
-              />
-
                   {/*SAVE NEW/UPDATE DELIVERY ADDRESS*/}
                   <Button
                     width={"60%"}
@@ -317,7 +290,7 @@ const OrderConfirm = ({ navigation }) => {
             </View>
               
             </ScrollView>
-          </View>
+          {/* </View> */}
         </>
       ) : (
         <>
@@ -478,7 +451,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    // position: "relative",
+    position: "relative",
   },
   cartBox: {
     height: 70,
@@ -560,7 +533,6 @@ const styles = StyleSheet.create({
   },
   txtbox: {
     padding: 10,
-    // fontWeight: 700,
   },
   label: {
     fontWeight: 'bold',
