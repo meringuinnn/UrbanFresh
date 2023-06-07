@@ -63,14 +63,14 @@ const OrderCard =({address,date,orders,pay,status,storename,orderid,o,navigation
 
     const getColor=(status)=>{
         if(status == 3){
-            return colors.dragon
+            return colors.red
         }
         else if(status==2){
-            return colors.primary
+            return colors.blue
         }else if(status==1){
-            return colors.mango
+            return colors.primary
         }else{
-            return colors.headerText
+            return colors.yellow
         }
     }
 
@@ -93,7 +93,7 @@ const OrderCard =({address,date,orders,pay,status,storename,orderid,o,navigation
         else if(status==2){
             return "Delivered"
         }else if(status==1){
-            return "Out for Deliver"
+            return "Out for Delivery"
         }else{
             return "Pending"
         }

@@ -8,8 +8,10 @@ export const colors = {
     watermelon : 'rgba(242, 154, 143, 0.4)',
     apple : 'rgba(207, 6, 6, 0.4)',
     pineapple : 'rgba(251, 209, 60, 0.4)',
-    dragon : ' rgba(223, 54, 92, 0.4)'  
-
+    dragon : ' rgba(223, 54, 92, 0.4)',
+    red: '#FF0000',
+    yellow: '#FCA510',
+    blue: '#1338BE',
 }
 
 export const padding = {

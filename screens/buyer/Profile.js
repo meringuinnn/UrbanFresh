@@ -34,7 +34,7 @@ const links = [
         name : 'Logout',
         route : ()=>{
             navigation.navigate('Login')
-            toast.show('Successfully Logout!!',{
+            toast.show('Successfully Logout!',{
                 type: "success",
                 placement: "bottom",
                 duration: 2000,
