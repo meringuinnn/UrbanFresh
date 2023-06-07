@@ -48,14 +48,16 @@ const DeliveryHome = ({navigation}) => {
 
 
 const getStatus=(status)=>{
-  if(status == 3){
+  if(status==3){
       return "Cancelled"
   }
   else if(status==2){
       return "Delivered"
-  }else if(status==1){
-      return "Out for Deliver"
-  }else{
+  }
+  else if(status==1){
+      return "Out for Delivery"
+  }
+  else{
       return "Pending"
   }
 }
@@ -69,11 +71,13 @@ const getStatus=(status)=>{
       <View style={styles.cartBox}>
 
         <Text style={styles.title}>Delivery Status</Text>
-        {order.length == 0 ? <Text></Text> : <Text style={styles.orderText}>Your order is currently {getStatus(order[0].status)}!</Text>}
+        {order.length == 0 ? <Text></Text> : <Text style={styles.orderText}>Your order is {getStatus(order[0].status)}!</Text>}
         {order.length == 0 ? <Text>No Current Orders</Text>
 
           : <View style={styles.infoBox}>
-            <Text style={styles.text}><Text style={styles.head}>{order.length > 0 && order[0].storename}</Text> has <Text style={[styles.status, { color: getColor(order[0].status) }]}>{order.length > 0 && getStatus(order[0].status)}</Text> your order!</Text>
+            <Text style={styles.text}><Text style={styles.head}>{order.length > 0 && order[0].storename}</Text> has set your order as <Text style={[styles.status, { color: getColor(order[0].status) }]}>{order.length > 0 && getStatus(order[0].status)}</Text>.</Text>
+            
+            <Text style={styles.text}></Text>
             <Text style={styles.text}>Delivery Rider: Dela Cruz, Juan</Text>
             <Text style={styles.text}>Contact Number: 09162568998</Text>
 
@@ -157,9 +161,10 @@ const styles = StyleSheet.create({
     },
     text :{
       textAlign : 'center',
-      fontSize : 14,
+      fontSize : 15,
       color : colors.headerText,
-      lineHeight : 18
+      lineHeight : 18,
+      lineHeight: 25,
     },
     head :{
       color : colors.headerText,
@@ -169,6 +174,6 @@ const styles = StyleSheet.create({
     },
     status :{
       fontSize : 16,
-      fontWeight : 'bold'
+      fontWeight : 'bold',
     }
 })
