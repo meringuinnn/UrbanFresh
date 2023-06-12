@@ -20,36 +20,36 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { FIRESTORE_DB } from "../../utils/firebaseConfig";
-import FruitCard from "../../components/FruitCard";
-import FruitCard_Whatspop from "../../components/FruitCard_Whatspop";
+// import FruitCard from "../../components/FruitCard";
+// import FruitCard_Whatspop from "../../components/FruitCard_Whatspop";
 import Header_Home from "../../components/Header_Home";
-import Icon from "react-native-vector-icons/Entypo";
+// import Icon from "react-native-vector-icons/Entypo";
 import Icon2 from "react-native-vector-icons/Feather";
 import ProductCard from "../../components/ProductCard";
-import apple from "../../assets/images/fruits/apple.png";
-import avocado from "../../assets/images/fruits/avocado.png";
-import banana from "../../assets/images/fruits/banana.png";
-import bg from "../../assets/images/seller.jpg";
+// import apple from "../../assets/images/fruits/apple.png";
+// import avocado from "../../assets/images/fruits/avocado.png";
+// import banana from "../../assets/images/fruits/banana.png";
+// import bg from "../../assets/images/seller.jpg";
 import vege from "../../assets/images/vege.png";
-import sellerss from "../../assets/kuya_buko.png";
+// import sellerss from "../../assets/kuya_buko.png";
 import { colors } from "../../utils/constants";
-import dragon from "../../assets/images/fruits/dragon-fruit.png";
-import fallback from "../../assets/images/fallback.png";
-import { fruits } from "../../utils/data";
-import guava from "../../assets/images/fruits/guava.png";
-import kiwi from "../../assets/images/fruits/kiwi.png";
-import lemon from "../../assets/images/fruits/lemon.png";
-import mango from "../../assets/images/fruits/mango.png";
-import mangosteen from "../../assets/images/fruits/mangosteen.png";
-import papaya from "../../assets/images/fruits/papaya.png";
-import retailer from "../../assets/images/retailer.png";
-import strawberry from "../../assets/images/fruits/strawberry.png";
+// import dragon from "../../assets/images/fruits/dragon-fruit.png";
+// import fallback from "../../assets/images/fallback.png";
+// import { fruits } from "../../utils/data";
+// import guava from "../../assets/images/fruits/guava.png";
+// import kiwi from "../../assets/images/fruits/kiwi.png";
+// import lemon from "../../assets/images/fruits/lemon.png";
+// import mango from "../../assets/images/fruits/mango.png";
+// import mangosteen from "../../assets/images/fruits/mangosteen.png";
+// import papaya from "../../assets/images/fruits/papaya.png";
+// import retailer from "../../assets/images/retailer.png";
+// import strawberry from "../../assets/images/fruits/strawberry.png";
 import useStore from "../../utils/appStore";
-import watermelon from "../../assets/images/fruits/watermelon.png";
-import wholesale from "../../assets/images/wholesale.png";
+// import watermelon from "../../assets/images/fruits/watermelon.png";
+// import wholesale from "../../assets/images/wholesale.png";
 
 const BuyerHome = ({ navigation }) => {
   const user = useStore((state) => state.user);

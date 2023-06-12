@@ -1,11 +1,10 @@
 {
   "name": "urban",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -17,7 +16,7 @@
     "@sentry/react-native": "^5.5.0",
     "axios": "^1.2.2",
     "eas-cli": "^3.13.2",
-    "expo": "~48.0.15",
+    "expo": "~48.0.18",
     "expo-asset": "^8.9.1",
     "expo-checkbox": "~2.3.1",
     "expo-file-system": "^15.2.2",
