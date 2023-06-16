@@ -39,7 +39,7 @@ const HeaderBackOnly = ({
 return (
     <SafeAreaView>
         <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate("TransactionHome")}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon2 name="arrow-back" size={25} style={{ color: 'white' }}/>
           </TouchableOpacity>     
         </View>

@@ -29,7 +29,7 @@ import {
 
 import Button from "../../components/Button";
 import { FIRESTORE_DB } from "../../utils/firebaseConfig";
-import Header from "../../components/Header";
+import HeaderBackOnly from '../../components/HeaderBackOnly'
 import Icon from "react-native-vector-icons/AntDesign";
 import Inputseller from "../../components/Inputseller";
 import { colors } from "../../utils/constants";
@@ -189,73 +189,47 @@ const OrderDetails = ({ navigation, route }) => {
     fee: 0,
   });
   return (
+    <>
+    <StatusBar backgroundColor={"#21C622"} barStyle={'light-content'} />
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.linkBox}>
-          <View style={styles.orderBox}>
-            <Text style={styles.orderText}>Order ID:</Text>
-            <Text style={styles.number}>{order.orderid.slice(0, 7)}</Text>
+          <HeaderBackOnly />
+          <View style={styles.titleContainer}>
+              <Text style={styles.title}>Order Details</Text>
           </View>
-        </View>
+          <ScrollView showsVerticalScrollIndicator={false} >
+            <View style={styles.contentContainer}>
+              <View style={styles.linkBox}>
+                  <View style={styles.orderBox}>
+                      <Text style={styles.orderText}>Order ID</Text>
+                      <Text style={styles.number}>{order.orderid.slice(0, 7)}</Text>
 
-        <View style={styles.linkBox}>
-          <View style={styles.orderBox}>
-            <Text style={styles.orderText}>Delivery Address:</Text>
-            <Text style={styles.normal}>
-              {client.fname} {client.lname}
-            </Text>
-            <Text style={styles.normal}>{client.mobile}</Text>
-            <Text style={styles.normal}>
-              {client.block || ""} {client.barangay || ""} {client.city || ""}{" "}
-              {client.province || ""} {client.zipcode || ""}
-            </Text>
-          </View>
-        </View>
-        {order.orders.map((ord, i) => (
-          <ProductCard key={i} {...ord} />
-        ))}
+                  </View>
+              </View>
 
-        <View style={styles.linkBox2}>
-          <Text style={{ fontSize: 16 }}>Shipping Fee</Text>
-          <Text style={{ fontSize: 16 }}>PHP {getTotalShipping()}</Text>
-        </View>
-        <View style={styles.linkBox2}>
-          <Text style={{ fontSize: 16 }}>Order Total</Text>
-          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-            PHP {getTotalPrice()}
-          </Text>
-        </View>
-        <View
-          style={{
-            width: "100%",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: 50,
-          }}
-        >
-          {order.status == 0 ? (
-            <Button
-              text="Approve Order"
-              color={colors.primary}
-              textColor="white"
-              onPress={() => {
-                setIsModal(true);
-                //handlePaid(order.orderid)
-              }}
-            />
-          ) : (
-            <Button
-              text="Set Done"
-              color={colors.primary}
-              textColor="white"
-              onPress={() => {
-                setDone();
-                //handlePaid(order.orderid)
-              }}
-            />
-          )}
-        </View>
+              <View style={styles.linkBox}>
+                  <View style={styles.orderBox}>
+                      <Text style={styles.orderText}>Delivery Address</Text>
+                      <Text style={styles.normal}>{client.fname} {client.lname}</Text>
+                      <Text style={styles.normal}>{client.mobile}</Text>
+                      <Text style={styles.normal}>{client.block || ''} {client.barangay || ''} {client.city || ''} {client.province || ''} {client.zipcode || ''}</Text>
+
+                  </View>
+              </View>
+              <View style={styles.productCardContainer}>
+              <Text style={styles.orderText}>Items</Text>
+                {order.orders.map((ord, i) => (
+                  <ProductCard key={i} {...ord} />
+              ))}
+              </View>
+              {/* <View style={styles.linkBox}>
+                  <Text style={{ fontSize: 16 }}>Shipping Fee</Text>
+                  <Text style={{ fontSize: 16 }}>PHP {getTotalShipping()}</Text>
+              </View> */}
+              <View style={styles.linkBox}>
+                  <Text style={{ fontSize: 16 }}>Order Total</Text>
+                  <Text style={{ fontSize: 16, fontWeight: 'bold' }}>PHP {getTotalPrice()}</Text>
+              </View>  
+            </View>
       </ScrollView>
       <Modal
         animationType="slide"
@@ -352,6 +326,7 @@ const OrderDetails = ({ navigation, route }) => {
         </View>
       </Modal>
     </SafeAreaView>
+    </>
   );
 };
 
@@ -379,77 +354,118 @@ const ProductCard = ({ pic, name, count, price, shipping }) => {
 export default OrderDetails;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
+  container : {
+    flex : 1,
+    backgroundColor : 'white',
     // paddingTop: Platform.OS === 'android' ? 25 : 0
   },
+  contentContainer:{
+      paddingBottom: 90,
+  },
+  titleContainer: {
+      backgroundColor: colors.primary,
+      borderBottomRightRadius: 20,
+      borderBottomLeftRadius: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingBottom: 10,
+  },
+  title: {
+      color: 'white',
+      fontSize: 24,
+      fontWeight: 'bold',
+      textTransform: 'uppercase',
+  },
+  productCardContainer: {
+      paddingHorizontal : 20,
+      paddingVertical : 10,
+      borderColor : '#D6D6D6',
+      borderBottomWidth :1,
+  }, 
   productCard: {
-    width: "100%",
-    height: 90,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingLeft: 20,
-    paddingRight: 20,
-    gap: 10,
+      width : '100%',
+      height : 90,
+      flexDirection : 'row',
+      alignItems : 'center',
+      // paddingLeft : 20,
+      // paddingRight : 20,
+      gap : 10
   },
-  orderBox: {
-    alignItems: "flex-start",
-    justifyContent: "center",
-    width: 200,
-    gap: 5,
+  orderText:{
+      // marginTop: 10,
+      fontWeight: 'bold',
   },
-  amount: {
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    gap: 5,
+  orderBox :{
+      alignItems :'flex-start',
+      justifyContent : 'center',
+      // width : 200,
+      gap :5
   },
+  amount : {
+      width : '100%',
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'flex-start',
+      gap :5
+  },  
   number: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "black",
+      fontSize : 18,
+      fontWeight : 'bold',
+      color: 'black'
   },
-  normal: {
-    fontSize: 14,
-    color: "#656565",
+  normal :{
+      fontSize : 14,
+      color: '#656565'
   },
-  price: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "black",
+  price :{
+      fontSize : 18,
+      fontWeight : 'bold',
+      color: 'black'
   },
-  count: {
-    fontSize: 18,
+  count :{
+      fontSize : 18,
+      
+      color: 'black'
+  },
+  linkText : {
+      fontSize : 16,
+      color : colors.headerText,
+      lineHeight : 24
 
-    color: "black",
   },
-  linkText: {
-    fontSize: 16,
-    color: colors.headerText,
-    lineHeight: 24,
+  linkBox :{
+      width : '100%',
+      // height : 50,
+      paddingLeft : 20,
+      paddingRight : 20,
+      paddingVertical : 10,
+      flexDirection : 'row',
+      alignItems : 'flex-start',
+      justifyContent : 'space-between',
+      borderColor : '#D6D6D6',
+      borderBottomWidth :1,
+
   },
-  linkBox: {
-    width: "100%",
-    height: 100,
-    paddingLeft: 20,
-    paddingRight: 20,
-    flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    borderColor: "#D6D6D6",
-    borderWidth: 1,
+  linkBox2 :{
+      width : '100%',
+      height : 50,
+      paddingLeft : 20,
+      paddingRight : 20,
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'space-between',
+      borderColor : '#D6D6D6',
+      borderWidth :1,
   },
-  linkBox2: {
-    width: "100%",
-    height: 50,
-    paddingLeft: 20,
-    paddingRight: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    borderColor: "#D6D6D6",
-    borderWidth: 1,
-  },
+  button: {
+      position: 'absolute', 
+      flexDirection: 'row', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      marginBottom: 20,
+      // top: 0, 
+      left: 0, 
+      right: 0, 
+      bottom: 0, 
+  }
 });
