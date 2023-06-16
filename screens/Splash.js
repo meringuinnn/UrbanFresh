@@ -13,6 +13,7 @@ import React from "react";
 import bg from "../assets/images/kiwi.png";
 import logo from "../assets/images/logo-neon-green.png";
 import { padding } from "../utils/constants";
+import tup from "../assets/tup-logo.png";
 
 const Splash = ({ navigation }) => {
   return (
@@ -26,6 +27,7 @@ const Splash = ({ navigation }) => {
       <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       <SafeAreaView style={styles.container}>
         <Image style={styles.logo} source={logo} />
+        <Image style={styles.logo2} source={tup} />
         <View style={styles.btnBox}>
           <Text style={styles.heading}>Quick delivery at your doorstep</Text>
           <View style={{ width: "90%" }}>
@@ -62,6 +64,13 @@ const styles = StyleSheet.create({
     height: 100,
     position: "absolute",
     top: 10,
+    right: 105,
+  },
+  logo2: {
+    width: 90,
+    height: 90,
+    position: "absolute",
+    top: 20,
     right: 10,
   },
   btnBox: {
