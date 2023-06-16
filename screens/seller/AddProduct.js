@@ -5,8 +5,8 @@ import {
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
-  StatusBar,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -175,7 +175,7 @@ const AddProduct = ({ navigation }) => {
         price: Number(product.price),
         stock: Number(product.stock),
         shipping: Number(product.shipping),
-        status: "active",
+        status: "pending",
         remarks_removed: "",
       });
       console.log(res);
@@ -200,12 +200,14 @@ const AddProduct = ({ navigation }) => {
   console.log(product);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-    {/* <KeyboardAvoidingView style={styles.main}> */}
+      {/* <KeyboardAvoidingView style={styles.main}> */}
       <View style={styles.input}>
         <Text style={styles.title}>Photos</Text>
         <View style={styles.preview}>
           <TouchableOpacity onPress={pickImage} style={styles.picker}>
-            <Text style={{ textAlign: "center", padding: 5}}>+ Add a Photo</Text>
+            <Text style={{ textAlign: "center", padding: 5 }}>
+              + Add a Photo
+            </Text>
           </TouchableOpacity>
           <View style={styles.imgPreview}>
             {product?.pic.length > 0 &&
@@ -331,7 +333,7 @@ const AddProduct = ({ navigation }) => {
           textColor="white"
         />
       </View>
-    {/* </KeyboardAvoidingView> */}
+      {/* </KeyboardAvoidingView> */}
     </ScrollView>
   );
 };
