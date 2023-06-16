@@ -230,6 +230,39 @@ const OrderDetails = ({ navigation, route }) => {
                   <Text style={{ fontSize: 16, fontWeight: 'bold' }}>PHP {getTotalPrice()}</Text>
               </View>  
             </View>
+          <View
+          style={{
+            // position: 'absolute',
+            width: "100%",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: 10,
+            // bottom: 10,
+          }}
+        >
+          {order.status == 0 ? (
+            <Button
+              text="Approve Order"
+              color={colors.primary}
+              textColor="white"
+              onPress={() => {
+                setIsModal(true);
+                //handlePaid(order.orderid)
+              }}
+            />
+          ) : (
+            <Button
+              text="Set Done"
+              color={colors.primary}
+              textColor="white"
+              onPress={() => {
+                setDone();
+                //handlePaid(order.orderid)
+              }}
+            />
+          )}
+        </View>
       </ScrollView>
       <Modal
         animationType="slide"
@@ -360,7 +393,8 @@ const styles = StyleSheet.create({
     // paddingTop: Platform.OS === 'android' ? 25 : 0
   },
   contentContainer:{
-      paddingBottom: 90,
+    flex: 1,
+    paddingBottom: 20,
   },
   titleContainer: {
       backgroundColor: colors.primary,
