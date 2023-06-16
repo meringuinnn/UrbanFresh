@@ -39,9 +39,9 @@ const EditProduct = ({route,navigation}) => {
         {key:3, value:'per Pack'},
       
        
-    ]
-    const data1 = 
-    [
+    // ]
+    // const data1 = 
+    // [
       
         {key:4, value:'per 10 kilos'},
         {key:5, value:'per Kaing (30 kilos)'},
@@ -244,7 +244,7 @@ const EditProduct = ({route,navigation}) => {
     
     // } 
 
-      setSelected={onChangeType} save="key"  search={false} data={data1} placeholder="Unit"  />
+      setSelected={onChangeType} save="key"  search={false} data={data} placeholder="Unit"  />
       </View> }
       <View style={styles.input}>
            <Text>Price</Text>
