@@ -66,9 +66,9 @@ const DeliveryHome = ({ navigation }) => {
     } else if (status == 2) {
       return "Delivered";
     } else if (status == 1) {
-      return "Out for Delivery";
+      return "To be delivered";
     } else {
-      return "Pending";
+      return "Awaiting Order Confirmation";
     }
   };
 
