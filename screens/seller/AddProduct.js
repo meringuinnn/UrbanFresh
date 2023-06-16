@@ -304,7 +304,7 @@ const AddProduct = ({ navigation }) => {
         />
       </View>
 
-      <View style={styles.input}>
+      {/* <View style={styles.input}>
         <Text style={styles.title}>Shipping Fee</Text>
         <TextInput
           onChangeText={(text) =>
@@ -314,7 +314,7 @@ const AddProduct = ({ navigation }) => {
           value={product.shipping}
           placeholder="Shipping Fee"
         />
-      </View>
+      </View> */}
 
       <View
         style={{

@@ -37,15 +37,15 @@ const OrderDetailsB = ({navigation,route}) => {
 
   const getTotalPrice=()=>{
     return order.orders.reduce((acc,item)=>{
-            return acc + ((item.price * item.count) + item.shipping)
+            return acc + ((item.price * item.count))
     },0)
 }
 
-const getTotalShipping=()=>{
-    return order.orders.reduce((acc,item)=>{
-            return acc + item.shipping
-    },0)
-}
+// const getTotalShipping=()=>{
+//     return order.orders.reduce((acc,item)=>{
+//             return acc + item.shipping
+//     },0)
+// }
 
 
 const handleDelivered = async (orderid)=>{
@@ -131,10 +131,10 @@ const handleCancel = async (orderid)=>{
                   <ProductCard key={i} {...ord} />
               ))}
               </View>
-              <View style={styles.linkBox}>
+              {/* <View style={styles.linkBox}>
                   <Text style={{ fontSize: 16 }}>Shipping Fee</Text>
                   <Text style={{ fontSize: 16 }}>PHP {getTotalShipping()}</Text>
-              </View>
+              </View> */}
               <View style={styles.linkBox}>
                   <Text style={{ fontSize: 16 }}>Order Total</Text>
                   <Text style={{ fontSize: 16, fontWeight: 'bold' }}>PHP {getTotalPrice()}</Text>
@@ -152,7 +152,7 @@ const handleCancel = async (orderid)=>{
   )
 }
 
-const ProductCard =({pic,name,count,price,shipping})=>{
+const ProductCard =({pic,name,count,price,})=>{
     return (
         <View style={styles.productCard}>
             <Image

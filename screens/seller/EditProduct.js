@@ -259,10 +259,10 @@ const EditProduct = ({route,navigation}) => {
            <TextInput onChangeText={(text)=>setProduct({...product,['stock']:text})} style={[styles.textBox,{height : 40}]}  value={product.stock} placeholder='0' />
       </View>
      
-      <View style={styles.input}>
+      {/* <View style={styles.input}>
            <Text>Shipping Fee</Text>
            <TextInput onChangeText={(text)=>setProduct({...product,['shipping']:text})} style={[styles.textBox,{height : 40}]}  value={product.shipping} placeholder='Shipping Fee'/>
-      </View>
+      </View> */}
 
       <View style={{
         width : '100%',
